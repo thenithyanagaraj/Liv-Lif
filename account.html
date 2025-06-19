@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Liv-Lif Wellness</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/account.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/logo.svg" alt="Liv-Lif" class="nav-logo">
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="shop.html" class="nav-link">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="shop.html?category=soups">Cup of Nourishment</a>
+                        <a href="shop.html?category=salads">Garden of Flavours</a>
+                        <a href="shop.html?category=mains">Traditional Techniques</a>
+                        <a href="shop.html?category=desserts">Chill Treats</a>
+                        <a href="shop.html?category=beverages">Quench Couture</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="shop-products.html" class="nav-link">Shop</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 21L16.514 16.506M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </button>
+                <div class="settings-dropdown" id="settings-dropdown">
+                    <button class="settings-btn" id="settings-btn" aria-label="Account">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                    <div class="settings-menu" id="settings-menu">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+                <button class="cart-btn" id="cart-btn" aria-label="Shopping Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v8a2 2 0 01-2 2H9a2 2 0 01-2-2v-8m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Account Section -->
+    <section class="account-section">
+        <div class="container">
+            <div class="account-layout">
+                <!-- Sidebar -->
+                <aside class="account-sidebar">
+                    <div class="user-profile">
+                        <div class="user-avatar">
+                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="User Avatar" id="user-avatar">
+                        </div>
+                        <div class="user-info">
+                            <h3 class="user-name" id="user-name">John Doe</h3>
+                            <p class="user-email" id="user-email">john.doe@example.com</p>
+                        </div>
+                    </div>
+                    
+                    <nav class="account-nav">
+                        <a href="#" class="nav-item active" data-section="overview">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                            </svg>
+                            Overview
+                        </a>
+                        <a href="#" class="nav-item" data-section="orders">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/>
+                            </svg>
+                            Recent Orders
+                        </a>
+                        <a href="#" class="nav-item" data-section="wishlist">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                            Wishlist
+                        </a>
+                        <a href="#" class="nav-item" data-section="addresses">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            Addresses
+                        </a>
+                        <a href="#" class="nav-item" data-section="profile">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            Profile Settings
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="account-main">
+                    <!-- Overview Section -->
+                    <div class="account-section-content active" id="overview-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Account Overview</h2>
+                            <p class="section-subtitle">Welcome back! Here's what's happening with your account.</p>
+                        </div>
+                        
+                        <div class="overview-grid">
+                            <div class="overview-card">
+                                <div class="card-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1z" fill="#C8291C"/>
+                                    </svg>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Total Orders</h3>
+                                    <p class="card-value">12</p>
+                                    <p class="card-subtitle">Since joining</p>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-card">
+                                <div class="card-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="#C8291C"/>
+                                    </svg>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Wishlist Items</h3>
+                                    <p class="card-value">5</p>
+                                    <p class="card-subtitle">Saved for later</p>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-card">
+                                <div class="card-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#C8291C"/>
+                                    </svg>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="card-title">Loyalty Points</h3>
+                                    <p class="card-value">850</p>
+                                    <p class="card-subtitle">Earn more with orders</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recent-activity">
+                            <h3 class="activity-title">Recent Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#C8291C"/>
+                                        </svg>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p class="activity-text">Order #LLF-2024-001 delivered successfully</p>
+                                        <p class="activity-time">2 hours ago</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="#C8291C"/>
+                                        </svg>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p class="activity-text">Added Jamun Ice Cream to wishlist</p>
+                                        <p class="activity-time">1 day ago</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#C8291C"/>
+                                        </svg>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p class="activity-text">Earned 50 loyalty points</p>
+                                        <p class="activity-time">3 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders Section -->
+                    <div class="account-section-content" id="orders-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Recent Orders</h2>
+                            <p class="section-subtitle">Track and manage your orders</p>
+                        </div>
+                        
+                        <div class="orders-list">
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-info">
+                                        <h4 class="order-number">Order #LLF-2024-001</h4>
+                                        <p class="order-date">Placed on March 15, 2024</p>
+                                    </div>
+                                    <div class="order-status delivered">Delivered</div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Moringa Soup">
+                                        <div class="item-details">
+                                            <h5>Moringa Soup</h5>
+                                            <p>Qty: 2</p>
+                                        </div>
+                                        <div class="item-price">₹360</div>
+                                    </div>
+                                    <div class="order-item">
+                                        <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Jamun Ice Cream">
+                                        <div class="item-details">
+                                            <h5>Jamun Ice Cream</h5>
+                                            <p>Qty: 1</p>
+                                        </div>
+                                        <div class="item-price">₹150</div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">Total: ₹510</div>
+                                    <div class="order-actions">
+                                        <button class="btn btn-outline btn-sm">View Details</button>
+                                        <button class="btn btn-primary btn-sm">Reorder</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="order-card">
+                                <div class="order-header">
+                                    <div class="order-info">
+                                        <h4 class="order-number">Order #LLF-2024-002</h4>
+                                        <p class="order-date">Placed on March 12, 2024</p>
+                                    </div>
+                                    <div class="order-status processing">Processing</div>
+                                </div>
+                                <div class="order-items">
+                                    <div class="order-item">
+                                        <img src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=80&h=80&fit=crop" alt="Thai Green Curry">
+                                        <div class="item-details">
+                                            <h5>Thai Green Curry</h5>
+                                            <p>Qty: 1</p>
+                                        </div>
+                                        <div class="item-price">₹320</div>
+                                    </div>
+                                </div>
+                                <div class="order-footer">
+                                    <div class="order-total">Total: ₹320</div>
+                                    <div class="order-actions">
+                                        <button class="btn btn-outline btn-sm">Track Order</button>
+                                        <button class="btn btn-secondary btn-sm">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wishlist Section -->
+                    <div class="account-section-content" id="wishlist-section">
+                        <div class="section-header">
+                            <h2 class="section-title">My Wishlist</h2>
+                            <p class="section-subtitle">Your saved favorite dishes</p>
+                        </div>
+                        
+                        <div class="wishlist-grid">
+                            <div class="wishlist-item">
+                                <div class="item-image">
+                                    <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Jamun Ice Cream">
+                                    <button class="remove-wishlist" aria-label="Remove from wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="item-info">
+                                    <h4 class="item-name">Jamun Ice Cream</h4>
+                                    <p class="item-price">₹150</p>
+                                    <button class="btn btn-primary btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                            
+                            <div class="wishlist-item">
+                                <div class="item-image">
+                                    <img src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Filter Coffee">
+                                    <button class="remove-wishlist" aria-label="Remove from wishlist">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="item-info">
+                                    <h4 class="item-name">Filter Coffee</h4>
+                                    <p class="item-price">₹80</p>
+                                    <button class="btn btn-primary btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Addresses Section -->
+                    <div class="account-section-content" id="addresses-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Delivery Addresses</h2>
+                            <p class="section-subtitle">Manage your delivery locations</p>
+                            <button class="btn btn-primary">Add New Address</button>
+                        </div>
+                        
+                        <div class="addresses-grid">
+                            <div class="address-card">
+                                <div class="address-header">
+                                    <h4 class="address-type">Home</h4>
+                                    <div class="address-badge default">Default</div>
+                                </div>
+                                <div class="address-details">
+                                    <p>123 Wellness Street</p>
+                                    <p>Green Valley, Mumbai</p>
+                                    <p>Maharashtra 400001</p>
+                                    <p>Phone: +91 98765 43210</p>
+                                </div>
+                                <div class="address-actions">
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                    <button class="btn btn-secondary btn-sm">Delete</button>
+                                </div>
+                            </div>
+                            
+                            <div class="address-card">
+                                <div class="address-header">
+                                    <h4 class="address-type">Office</h4>
+                                </div>
+                                <div class="address-details">
+                                    <p>456 Business Park</p>
+                                    <p>Andheri East, Mumbai</p>
+                                    <p>Maharashtra 400069</p>
+                                    <p>Phone: +91 98765 43210</p>
+                                </div>
+                                <div class="address-actions">
+                                    <button class="btn btn-outline btn-sm">Edit</button>
+                                    <button class="btn btn-secondary btn-sm">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Section -->
+                    <div class="account-section-content" id="profile-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Profile Settings</h2>
+                            <p class="section-subtitle">Update your personal information</p>
+                        </div>
+                        
+                        <form class="profile-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name" class="form-label">First Name</label>
+                                    <input type="text" id="first-name" name="firstName" class="form-input" value="John">
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name" class="form-label">Last Name</label>
+                                    <input type="text" id="last-name" name="lastName" class="form-input" value="Doe">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" value="john.doe@example.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" value="+91 98765 43210">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="birthday" class="form-label">Date of Birth</label>
+                                <input type="date" id="birthday" name="birthday" class="form-input" value="1990-01-15">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Dietary Preferences</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="dietary" value="vegetarian" checked>
+                                        <span class="checkmark"></span>
+                                        Vegetarian
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="dietary" value="vegan">
+                                        <span class="checkmark"></span>
+                                        Vegan
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="dietary" value="gluten-free">
+                                        <span class="checkmark"></span>
+                                        Gluten Free
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                <button type="button" class="btn btn-outline">Change Password</button>
+                            </div>
+                        </form>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/logo.svg" alt="Liv-Lif" class="footer-logo">
+                        <p class="footer-tagline">Nourishment in every bite, wellness in every meal</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zm4.624 6.989c.396 0 .717.321.717.717s-.321.717-.717.717-.717-.321-.717-.717.321-.717.717-.717zm-4.624 1.537c2.483 0 4.499 2.016 4.499 4.499s-2.016 4.499-4.499 4.499-4.499-2.016-4.499-4.499 2.016-4.499 4.499-4.499zm0 1.44c-1.689 0-3.059 1.37-3.059 3.059s1.37 3.059 3.059 3.059 3.059-1.37 3.059-3.059-1.37-3.059-3.059-3.059z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Menu</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=soups">Cup of Nourishment</a></li>
+                        <li><a href="shop.html?category=mains">Traditional Techniques</a></li>
+                        <li><a href="shop.html?category=desserts">Chill Treats</a></li>
+                        <li><a href="shop.html">Full Menu</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="orders.html">Order Tracking</a></li>
+                        <li><a href="shipping.html">Delivery Info</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Get in Touch</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                        <li><a href="contact.html#feedback">Feedback</a></li>
+                        <li><a href="contact.html#partnership">Partnership</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Liv-Lif. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="cookies.html">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="footer-payments">
+                    <span>Secure payments with</span>
+                    <div class="payment-icons">
+                        <span class="payment-icon">💳</span>
+                        <span class="payment-icon">📱</span>
+                        <span class="payment-icon">🏦</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/settings.js"></script>
+    <script src="scripts/account.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/cart.js"></script>
+</body>
+</html>

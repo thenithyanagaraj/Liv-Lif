@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liv-Lif - Nourishment in Every Bite</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/logo.svg" alt="Liv-Lif" class="nav-logo">
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="shop.html" class="nav-link">Menu</a>
+                    <div class="dropdown-content">
+                        <a href="shop.html?category=soups">Cup of Nourishment</a>
+                        <a href="shop.html?category=salads">Garden of Flavours</a>
+                        <a href="shop.html?category=mains">Traditional Techniques</a>
+                        <a href="shop.html?category=desserts">Chill Treats</a>
+                        <a href="shop.html?category=beverages">Quench Couture</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="shop-products.html" class="nav-link">Shop</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M21 21L16.514 16.506M19 10.5A8.5 8.5 0 1110.5 2a8.5 8.5 0 018.5 8.5z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </button>
+                <div class="settings-dropdown" id="settings-dropdown">
+                    <button class="settings-btn" id="settings-btn" aria-label="Account">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </button>
+                    <div class="settings-menu" id="settings-menu">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+                <button class="cart-btn" id="cart-btn" aria-label="Shopping Cart">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v8a2 2 0 01-2 2H9a2 2 0 01-2-2v-8m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="Nourishing food" class="hero-image" loading="lazy">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">Nourishment in Every Bite</h1>
+            <p class="hero-subtitle">Experience authentic flavors crafted with love, tradition, and the finest natural ingredients for your wellness journey</p>
+            <div class="hero-actions">
+                <a href="shop.html" class="btn btn-primary">Explore Menu</a>
+                <a href="shop-products.html" class="btn btn-secondary">Order Now</a>
+            </div>
+        </div>
+        
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Values Row -->
+    <section class="values-row">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-item fade-in">
+                    <div class="value-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="#C8291C"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Farm Fresh</h3>
+                    <p class="value-description">Sourced directly from organic farms</p>
+                </div>
+                
+                <div class="value-item fade-in">
+                    <div class="value-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#C8291C"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Traditional Methods</h3>
+                    <p class="value-description">Time-honored cooking techniques</p>
+                </div>
+                
+                <div class="value-item fade-in">
+                    <div class="value-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z" fill="#C8291C"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">No Preservatives</h3>
+                    <p class="value-description">Pure, natural ingredients only</p>
+                </div>
+                
+                <div class="value-item fade-in">
+                    <div class="value-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L3 7v10c0 5.55 3.84 9.74 9 9.74s9-4.19 9-9.74V7l-9-5z" fill="#C8291C"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Wellness Focused</h3>
+                    <p class="value-description">Nutrition meets delicious taste</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Tiles -->
+    <section class="categories-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore Our Menu</h2>
+                <p class="section-subtitle">Discover our carefully curated food collections</p>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="shop.html?category=soups" class="category-tile fade-in">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Cup of Nourishment" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-name">Cup of Nourishment</h3>
+                        <p class="category-description">Warming soups for every season</p>
+                        <span class="category-cta">Explore Soups</span>
+                    </div>
+                </a>
+                
+                <a href="shop.html?category=mains" class="category-tile fade-in">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Traditional Techniques" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-name">Traditional Techniques</h3>
+                        <p class="category-description">Modern twist on classic flavors</p>
+                        <span class="category-cta">View Mains</span>
+                    </div>
+                </a>
+                
+                <a href="shop.html?category=desserts" class="category-tile fade-in">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Chill Treats" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <h3 class="category-name">Chill Treats</h3>
+                        <p class="category-description">Frozen delights and sweet endings</p>
+                        <span class="category-cta">Sweet Treats</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story -->
+    <section class="brand-story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image fade-in">
+                    <img src="https://images.pexels.com/photos/1482101/pexels-photo-1482101.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop" alt="Our Story" loading="lazy">
+                </div>
+                <div class="story-content fade-in">
+                    <h2 class="story-title">Our Culinary Journey</h2>
+                    <p class="story-text">
+                        At Liv-Lif, we believe that food is medicine and every meal should nourish both 
+                        body and soul. Our journey began with a simple vision: to create authentic, 
+                        wholesome food that celebrates traditional flavors while embracing modern 
+                        wellness principles.
+                    </p>
+                    <blockquote class="story-quote">
+                        "Food is not just sustenance, it's a celebration of life, culture, and wellness. Every dish we create tells a story of tradition, love, and mindful nourishment."
+                        <cite>- Founders, Liv-Lif</cite>
+                    </blockquote>
+                    <a href="about.html" class="btn btn-outline">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Dishes</h2>
+                <p class="section-subtitle">Handpicked favorites from our kitchen</p>
+            </div>
+            
+            <div class="products-carousel" id="featured-carousel">
+                <div class="carousel-track">
+                    <div class="product-card fade-in">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Moringa Soup" loading="lazy">
+                            <div class="product-badge">Bestseller</div>
+                            <button class="product-wishlist" aria-label="Add to wishlist">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Moringa Soup</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(47)</span>
+                            </div>
+                            <p class="product-price">₹180</p>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-product-id="moringa-soup">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card fade-in">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Thai Green Curry" loading="lazy">
+                            <button class="product-wishlist" aria-label="Add to wishlist">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Thai Green Curry</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(32)</span>
+                            </div>
+                            <p class="product-price">₹320</p>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-product-id="thai-green-curry">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card fade-in">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Jamun Ice Cream" loading="lazy">
+                            <div class="product-badge">New</div>
+                            <button class="product-wishlist" aria-label="Add to wishlist">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Jamun Ice Cream</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(28)</span>
+                            </div>
+                            <p class="product-price">₹150</p>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-product-id="jamun-ice-cream">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card fade-in">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop" alt="Filter Coffee" loading="lazy">
+                            <button class="product-wishlist" aria-label="Add to wishlist">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Filter Coffee</h3>
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(41)</span>
+                            </div>
+                            <p class="product-price">₹80</p>
+                            <button class="btn btn-primary btn-sm add-to-cart" data-product-id="filter-coffee">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-prev" aria-label="Previous products">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15,18 9,12 15,6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-btn carousel-next" aria-label="Next products">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="testimonials-background">
+            <img src="https://images.pexels.com/photos/1482101/pexels-photo-1482101.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop" alt="Happy customers" loading="lazy">
+            <div class="testimonials-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title light">What Our Customers Say</h2>
+                <p class="section-subtitle light">Real stories from real food lovers</p>
+            </div>
+            
+            <div class="testimonials-slider" id="testimonials-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "The Moringa Soup has become my go-to comfort food. It's not just delicious, 
+                            but I can feel the nourishment in every spoonful. Liv-Lif truly understands wellness cuisine."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Priya Sharma" class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Priya Sharma</h4>
+                                <p class="author-title">Wellness Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "Finally found a place that serves authentic, healthy food without compromising on taste. 
+                            The Thai Green Curry is absolutely divine!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Rahul Mehta" class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Rahul Mehta</h4>
+                                <p class="author-title">Food Blogger</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">★★★★☆</div>
+                        <p class="testimonial-text">
+                            "Love the focus on traditional techniques and natural ingredients. The subscription 
+                            meal kits have made healthy eating so convenient for our family."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Anita Gupta" class="author-avatar">
+                            <div class="author-info">
+                                <h4 class="author-name">Anita Gupta</h4>
+                                <p class="author-title">Working Mother</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="blog-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">From Our Wellness Kitchen</h2>
+                <p class="section-subtitle">Insights, tips, and stories for mindful eating</p>
+            </div>
+            
+            <div class="blog-grid">
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop" alt="Ayurvedic Cooking" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Wellness</span>
+                            <span class="blog-date">March 15, 2024</span>
+                        </div>
+                        <h3 class="blog-title">5 Ayurvedic Principles for Daily Cooking</h3>
+                        <p class="blog-excerpt">
+                            Discover how ancient Ayurvedic wisdom can transform your daily cooking 
+                            and enhance your overall well-being.
+                        </p>
+                        <a href="#article-1" class="blog-link">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.pexels.com/photos/1092730/pexels-photo-1092730.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop" alt="Seasonal Eating" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Nutrition</span>
+                            <span class="blog-date">March 12, 2024</span>
+                        </div>
+                        <h3 class="blog-title">The Art of Seasonal Eating</h3>
+                        <p class="blog-excerpt">
+                            Learn how eating with the seasons can boost your immunity and 
+                            connect you with nature's natural rhythms.
+                        </p>
+                        <a href="#article-2" class="blog-link">Read More</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=600&h=300&fit=crop" alt="Farm to Table" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Sustainability</span>
+                            <span class="blog-date">March 10, 2024</span>
+                        </div>
+                        <h3 class="blog-title">Our Farm-to-Table Journey</h3>
+                        <p class="blog-excerpt">
+                            Take a behind-the-scenes look at how our ingredients travel from 
+                            organic farms directly to your plate.
+                        </p>
+                        <a href="#article-3" class="blog-link">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-cta">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">Join Our Wellness Community</h2>
+                <p class="newsletter-subtitle">
+                    Get exclusive access to new dishes, wellness tips, and special offers delivered to your inbox
+                </p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <p class="newsletter-disclaimer">
+                        By subscribing, you agree to receive marketing emails. You can unsubscribe at any time.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/logo.svg" alt="Liv-Lif" class="footer-logo">
+                        <p class="footer-tagline">Nourishment in every bite, wellness in every meal</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zm4.624 6.989c.396 0 .717.321.717.717s-.321.717-.717.717-.717-.321-.717-.717.321-.717.717-.717zm-4.624 1.537c2.483 0 4.499 2.016 4.499 4.499s-2.016 4.499-4.499 4.499-4.499-2.016-4.499-4.499 2.016-4.499 4.499-4.499zm0 1.44c-1.689 0-3.059 1.37-3.059 3.059s1.37 3.059 3.059 3.059 3.059-1.37 3.059-3.059-1.37-3.059-3.059-3.059z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Menu</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=soups">Cup of Nourishment</a></li>
+                        <li><a href="shop.html?category=mains">Traditional Techniques</a></li>
+                        <li><a href="shop.html?category=desserts">Chill Treats</a></li>
+                        <li><a href="shop.html">Full Menu</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="sustainability.html">Sustainability</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="orders.html">Order Tracking</a></li>
+                        <li><a href="shipping.html">Delivery Info</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-heading">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Get in Touch</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                        <li><a href="contact.html#feedback">Feedback</a></li>
+                        <li><a href="contact.html#partnership">Partnership</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 Liv-Lif. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="cookies.html">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="footer-payments">
+                    <span>Secure payments with</span>
+                    <div class="payment-icons">
+                        <span class="payment-icon">💳</span>
+                        <span class="payment-icon">📱</span>
+                        <span class="payment-icon">🏦</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-overlay" id="cart-overlay"></div>
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h3 class="cart-title">Shopping Cart</h3>
+                <button class="cart-close" id="cart-close" aria-label="Close cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span class="total-label">Total: </span>
+                    <span class="total-amount" id="cart-total">₹0</span>
+                </div>
+                <div class="cart-actions">
+                    <a href="cart.html" class="btn btn-outline btn-block">View Cart</a>
+                    <a href="checkout.html" class="btn btn-primary btn-block">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.386"/>
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="scripts/products.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/carousel.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/settings.js"></script>
+</body>
+</html>
