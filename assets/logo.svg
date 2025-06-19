@@ -1,0 +1,15 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Liv-Lif Logo -->
+  <g id="logo">
+    <!-- Background circle -->
+    <circle cx="20" cy="20" r="18" fill="#3A4935" stroke="#C8291C" stroke-width="2"/>
+    
+    <!-- Leaf design -->
+    <path d="M12 20C12 16 15 12 20 12C25 12 28 16 28 20C28 24 25 28 20 28C15 28 12 24 12 20Z" fill="#E9C28B"/>
+    <path d="M16 20C16 18 17.5 16 20 16C22.5 16 24 18 24 20C24 22 22.5 24 20 24C17.5 24 16 22 16 20Z" fill="#6D497F"/>
+    
+    <!-- Text -->
+    <text x="45" y="16" font-family="DM Serif Display, serif" font-size="14" font-weight="400" fill="#3A4935">Liv-Lif</text>
+    <text x="45" y="28" font-family="Inter, sans-serif" font-size="8" font-weight="400" fill="#6D497F">WELLNESS</text>
+  </g>
+</svg>
